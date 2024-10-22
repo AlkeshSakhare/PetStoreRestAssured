@@ -37,34 +37,39 @@ public class UserTest {
 
 	@Test(priority = 1)
 	private void createUser() {
+		System.out.println("======================Test Start======================");
 		// TODO Auto-generated method stub
 		Response res = usersEndpoint.createUser(userPojo);
 		res.then().statusCode(200);
+		System.out.println("======================Test End======================");
 	}
-	
+
 	@Test(priority = 2)
-	private void getUser()
-	{
+	private void getUser() {
+		System.out.println("======================Test Start======================");
 		Response res = usersEndpoint.getUser(userPojo.getUsername());
 		res.then().statusCode(200);
+		System.out.println("======================Test End======================");
 	}
-	
-	
+
 	@Test(priority = 3)
 	private void updateUser() {
+		System.out.println("======================Test Start======================");
 		// TODO Auto-generated method stub
 		userPojo.setFirstName(faker.name().firstName());
 		userPojo.setLastName(faker.name().lastName());
 		userPojo.setPassword(faker.internet().password());
 		Response res = usersEndpoint.updateUser(userPojo.getUsername(), userPojo);
 		res.then().statusCode(200);
+		System.out.println("======================Test End======================");
 	}
-	
-	
+
 	@Test(priority = 4)
 	private void deleteUser() {
+		System.out.println("======================Test Start======================");
 		// TODO Auto-generated method stub
 		Response res = usersEndpoint.deleteUser(userPojo.getUsername());
 		res.then().statusCode(200);
+		System.out.println("======================Test End======================");
 	}
 }
